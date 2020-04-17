@@ -46,7 +46,6 @@ about:
     (with Cython and/or Numba used to improve performance)
   doc_url: https://arch.readthedocs.org/en/latest/
   dev_url: https://github.com/bashtage/arch
-  home: https://github.com/bashtage/arch
 
 extra:
   recipe-maintainers:
