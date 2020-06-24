@@ -200,4 +200,5 @@ Feedstock Maintainers
 =====================
 
 * [@DanielBok](https://github.com/DanielBok/)
+* [@bashtage](https://github.com/bashtage/)
 
