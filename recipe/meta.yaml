@@ -19,17 +19,17 @@ requirements:
     - {{ compiler('c') }}
   host:
     - python
-    - cython >=0.29.14
+    - cython >=0.29.21
     - pip
-    - numpy 1.14.*
+    - numpy 1.16.*
   run:
     - python
     - cython >=0.29.14
-    - numpy >=1.14
-    - pandas >=0.23
+    - numpy >=1.16
+    - pandas >=1.0
     - property-cached >=1.6.3
     - scipy >=1.0.1
-    - statsmodels >=0.9
+    - statsmodels >=0.10
 
 test:
   imports:
@@ -46,7 +46,6 @@ about:
     (with Cython and/or Numba used to improve performance)
   doc_url: https://arch.readthedocs.org/en/latest/
   dev_url: https://github.com/bashtage/arch
-  home: https://github.com/bashtage/arch
 
 extra:
   recipe-maintainers:
