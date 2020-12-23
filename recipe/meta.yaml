@@ -19,9 +19,9 @@ requirements:
     - {{ compiler('c') }}
   host:
     - python
-    - cython >=0.29.21
+    - cython >=0.29.14
     - pip
-    - numpy 1.16.*
+    - numpy >=1.16
   run:
     - python
     - cython >=0.29.14
