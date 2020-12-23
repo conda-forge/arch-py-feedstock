@@ -10,7 +10,7 @@ source:
   sha256: 8a3f80fe300f8f0cbf7bcdb337dbd3666d7371984bf91bb47fa8ffda6b0e1449
 
 build:
-  number: 1
+  number: 2
   script: "{{ PYTHON }} setup.py install --single-version-externally-managed --record=record.txt"
   skip: True  # [py<36]
 
@@ -19,9 +19,9 @@ requirements:
     - {{ compiler('c') }}
   host:
     - python
-    - cython >=0.29.21
+    - cython >=0.29.14
     - pip
-    - numpy 1.16.*
+    - numpy >=1.16
   run:
     - python
     - cython >=0.29.14
