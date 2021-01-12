@@ -10,7 +10,7 @@ source:
   sha256: 8a3f80fe300f8f0cbf7bcdb337dbd3666d7371984bf91bb47fa8ffda6b0e1449
 
 build:
-  number: 2
+  number: 3
   script: "{{ PYTHON }} setup.py install --single-version-externally-managed --record=record.txt"
   skip: True  # [py<36]
 
