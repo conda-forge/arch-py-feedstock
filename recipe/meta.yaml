@@ -1,5 +1,5 @@
 {% set name = "arch" %}
-{% set version = "4.16" %}
+{% set version = "4.16.1" %}
 
 package:
   name: arch-py
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7ca8d7d9f4178f394969d4291834d7511cb0db9fcc37d6cf1d58263d672f3c86
+  sha256: 0b3dd394f3f9d09b2ca1cb1027700fa2fcc678873242daec39a66b7988b964e3
 
 build:
   number: 0
