@@ -1,5 +1,5 @@
 {% set name = "arch" %}
-{% set version = "4.16.1" %}
+{% set version = "4.18" %}
 
 package:
   name: arch-py
@@ -7,28 +7,28 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0b3dd394f3f9d09b2ca1cb1027700fa2fcc678873242daec39a66b7988b964e3
+  sha256: 2cc4b68cdd5d2fe1778cd2fee285e147d73a658ad95a3f477bfe16d131631937
 
 build:
   number: 0
   script: {{ PYTHON }} setup.py install --single-version-externally-managed --record=record.txt
-  skip: true  # [py<36]
+  skip: true  # [py<37]
 
 requirements:
   build:
     - {{ compiler('c') }}
   host:
     - python
-    - cython >=0.29.14
+    - cython >=0.29.22
     - pip
     - numpy >=1.16
   run:
     - python
-    - cython >=0.29.14
+    - cython >=0.29.22
     - numpy >=1.16
     - pandas >=1.0
     - property-cached >=1.6.3
-    - scipy >=1.0.1
+    - scipy >=1.2.3
     - statsmodels >=0.10
 
 test:
