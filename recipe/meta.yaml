@@ -10,7 +10,7 @@ source:
   sha256: 2dfd1b5f62b72625b8ed430ae0a3e011bbe24b9147c0164bc9e48bf5202dc6ab
 
 build:
-  number: 1
+  number: 2
   script:
     - export PYTHONUNBUFFERED=1  # [ppc64le]
     - {{ PYTHON }} -m pip install -vv --no-deps --ignore-installed .
@@ -25,7 +25,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
   host:
     - python
-    - cython >=0.29.22
+    - cython >=0.29.26
     - pip
     - setuptools
     - setuptools_scm
@@ -33,7 +33,7 @@ requirements:
     - numpy
   run:
     - python
-    - cython >=0.29.22
+    - cython >=0.29.26
     - {{ pin_compatible('numpy') }}
     - pandas >=1.0
     - property-cached >=1.6.3
