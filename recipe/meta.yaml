@@ -1,5 +1,5 @@
 {% set name = "arch" %}
-{% set version = "5.4.0" %}
+{% set version = "5.5.0" %}
 
 package:
   name: arch-py
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a1e83d4ffc5c09516230e58dc9f9c4af55445e2005507a51896f7ea120d9a5bd
+  sha256: 00f64304c6fae83ce9e38e54b5cad273ee1171dc8347c793a7a66212c5205848
 
 build:
-  number: 1
+  number: 0
   script:
     - export PYTHONUNBUFFERED=1  # [ppc64le]
     - {{ PYTHON }} -m pip install -vv --no-deps --ignore-installed .
