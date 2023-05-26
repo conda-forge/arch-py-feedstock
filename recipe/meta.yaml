@@ -49,7 +49,7 @@ test:
     - arch._version
   commands:
     - pip check
-    - python test_runner.py                  # [python_impl == "cpython"]
+    - python recipe/test_runner.py                  # [python_impl == "cpython"]
   requires:
     - pip
     - packaging
