@@ -6,4 +6,4 @@ os.environ["OMP_NUM_THREADS"] = "1"
 
 import arch
 
-arch.test(["-n", "auto", "durations=25"])
+arch.test(["-n", "auto", "--durations=25"])
