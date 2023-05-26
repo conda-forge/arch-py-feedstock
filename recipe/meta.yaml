@@ -18,16 +18,16 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython >=0.29.34                       # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
+    - {{ compiler('c') }}
   host:
     - python
     - pip
     - setuptools
-    - cython >=0.29.34
+    - cython >=0.29.34,<3
     # Do not add any constraint on numpy here to use global pinning
     - numpy
   run:
