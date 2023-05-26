@@ -10,7 +10,7 @@ source:
   sha256: a9ea622f099110f01ce421b6d298c921ec806abfb38fee4a3dd177ed4872fc24
 
 build:
-  number: 0
+  number: 1
   script:
     - export PYTHONUNBUFFERED=1  # [ppc64le]
     - {{ PYTHON }} -m pip install -vv --no-deps --ignore-installed .
@@ -18,22 +18,20 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
+    - {{ compiler('c') }}
   host:
     - python
-    - cython >=0.29.34
     - pip
     - setuptools
-    - setuptools_scm
+    - cython >=0.29.34,<3
     # Do not add any constraint on numpy here to use global pinning
     - numpy
   run:
     - python
-    - cython >=0.29.34
     - {{ pin_compatible('numpy') }}
     - pandas >=1.1
     - scipy >=1.5
@@ -49,6 +47,11 @@ test:
     - arch.data
     - arch.utility
     - arch._version
+  commands:
+    - pip check
+  requires:
+    - pip
+    - packaging
 
 about:
   home: https://github.com/bashtage/arch
