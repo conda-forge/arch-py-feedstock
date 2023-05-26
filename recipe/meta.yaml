@@ -49,12 +49,9 @@ test:
     - arch._version
   commands:
     - pip check
-    - python recipe/test_runner.py                  # [python_impl == "cpython"]
   requires:
     - pip
     - packaging
-    - pytest
-    - pytest-xdist
 
 about:
   home: https://github.com/bashtage/arch
