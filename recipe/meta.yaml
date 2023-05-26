@@ -47,7 +47,11 @@ test:
     - arch.data
     - arch.utility
     - arch._version
+  commands:
+    - pip check
+    - python test_runner.py                  # [python_impl == "cpython"]
   requires:
+    - pip
     - packaging
     - pytest
     - pytest-xdist
