@@ -27,6 +27,7 @@ requirements:
     - python
     - pip
     - setuptools
+    - cython >=0.29.34
     # Do not add any constraint on numpy here to use global pinning
     - numpy
   run:
