@@ -1,5 +1,5 @@
 {% set name = "arch" %}
-{% set version = "7.0.0" %}
+{% set version = "7.1.0" %}
 
 package:
   name: arch-py
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 353c0dba5242287b8b6b587a70250d788436630bf3b7ef6106f577e45d1ec247
+  sha256: 1366948acb0a74ebaef7bb88ba9009951208767539938c53b222119bf0eeb701
 
 build:
-  number: 2
+  number: 0
   script:
     - export PYTHONUNBUFFERED=1  # [ppc64le]
     - {{ PYTHON }} -m pip install -vv --no-deps --ignore-installed .
@@ -53,9 +53,11 @@ test:
     - arch._version
   commands:
     - pip check
+    - python -c "import arch; arch.test(['--skip-slow', '--numprocesses', '{{ CPU_COUNT }}'])"
   requires:
     - pip
-    - packaging
+    - pytest <8
+    - pytest-xdist
 
 about:
   home: https://github.com/bashtage/arch
