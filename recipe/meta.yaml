@@ -10,13 +10,12 @@ source:
   sha256: 2c6128174e0e3ab4c2cad527e78eb3fbce4a4f8ba53580bdf0d02566eb2e953d
 
 build:
-  number: 0
+  number: 1
   script:
     - export PYTHONUNBUFFERED=1  # [ppc64le]
     - {{ PYTHON }} -m pip install -vv --no-deps --ignore-installed .
-  skip: true  # [py<39]
-  skip: true  # [python_impl == "pypy"]
-
+  skip: true  # [py<39 or python_impl == "pypy"]
+  
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
