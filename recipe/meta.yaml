@@ -25,7 +25,6 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - cython >=3.0.13                        # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
-    - setuptools_scm >=9.2.0, <10
     - {{ compiler("c") }}
     - {{ stdlib("c") }}
   host:
@@ -37,6 +36,7 @@ requirements:
     - numpy
     - meson-python
     - ninja
+    - setuptools_scm >=9.2.0, <10
   run:
     - python
     - pandas >=1.4
