@@ -30,7 +30,7 @@ requirements:
     - python
     - pip
     - setuptools
-    - setuptools_scm >=9.2.0, <10
+    - setuptools_scm =9.2.0
     - cython >=3.0.10
     # Do not add any constraint on numpy here to use global pinning
     - numpy
