@@ -60,8 +60,9 @@ test:
     - arch.utility
     - arch._version
   commands:
+    # do not run test suite in emulation because it takes a long time
     - pip check
-    - python -c "import arch; arch.test(['-m', '(not slow)', '--numprocesses', '{{ CPU_COUNT }}'])"
+    - python -c "import arch; arch.test(['-m', '(not slow)', '--numprocesses', '{{ CPU_COUNT }}'])"  # [(build_platform == target_platform) and (python_impl == "cpython")]
   requires:
     - pip
     - pytest >=8.4.2
