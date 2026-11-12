@@ -1,13 +1,13 @@
 {% set name = "arch" %}
-{% set version = "8.0.0" %}
+{% set version = "9.0.0" %}
 
 package:
   name: arch-py
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5e9895c2354b9475aff50797ff2191dc64dc5f79602baf0c9321310fb864b637
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 83a02c8dfbe94e3fe56aaff225c6e2d35b738e589009202c576ff173fb1e3d21
 
 build:
   number: 0
@@ -21,7 +21,7 @@ build:
     - {{ PYTHON }} -m pip install -vv --no-deps --ignore-installed . -Csetup-args=${MESON_ARGS_REDUCED// / -Csetup-args=}  # [unix]
     - {{ PYTHON }} -m pip install -vv --no-deps --ignore-installed .  # [not unix]
   skip: true  # [py<310 or python_impl == "pypy"]
-  
+
 requirements:
   build:
     - python                                 # [build_platform != target_platform]
